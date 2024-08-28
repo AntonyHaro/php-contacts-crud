@@ -1,0 +1,77 @@
+:root {
+  --text-color: hsl(0, 0%, 27%);
+  --secondary-text-color: hsl(212, 100%, 24%);
+  --primary-background: hsl(0, 0%, 93%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cascadia Code", monospace;
+}
+
+body {
+  background-color: var(--primary-background);
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  transition: 0.3;
+}
+
+header {
+  height: 10%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.title {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-list {
+  width: 50%;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact {
+  background-color: rgb(196, 196, 196);
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px dashed var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+.button-wrapper{
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
