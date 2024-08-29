@@ -1,0 +1,9 @@
+:root {
+    --text-color: hsl(0, 0%, 15%);
+    --secondary-text-color: hsl(211, 100%, 16%);
+    --border-color: hsl(0, 0%, 30%);
+    --primary-background: hsl(204, 33%, 90%);
+    --contact-background: hsl(204, 33%, 75%);
+    --body-background: hsl(0, 0%, 93%);
+  }
+  

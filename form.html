@@ -5,43 +5,72 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Criar contato</title>
         <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="theme.css" />
         <link rel="stylesheet" href="form.css" />
     </head>
     <body>
-        <form action="">
-            <h1>Crie um contato</h1>
-            <div class="input-container">
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Digite o nome do contato"
-                />
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Digite o email"
-                />
-                <input
-                    type="number"
-                    min="0"
-                    name="age"
-                    id="age"
-                    placeholder="Digite a idade"
-                />
-                <input
-                    type="tel"
-                    name="tel"
-                    id="tel"
-                    placeholder="Digite o telefone"
-                />
-            </div>
-
-            <div class="button-container">
-                <button type="submit">Enviar</button>
-                <button>Cancelar</button>
-            </div>  
-        </form>
+        <header>
+            <h1>- Sistema de Contatos -</h1>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Configurações</a>
+            </nav>
+            <input type="text" class="search" placeholder="Pesquisar..." />
+        </header>
+        <main>
+            <section>
+                <a href="index.html" class="back-menu">⬅️ Voltar a lista de contatos</a>
+                <form action="">
+                    <h1>Crie um contato! 👤📲</h1>
+                    <div class="input-container">
+                        <label for="name"
+                            >Nome do contato:
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="nome do contato:"
+                            />
+                        </label>
+                        <label for="email"
+                            >Email do contato:
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="email:"
+                            />
+                        </label>
+                        <label for="age"
+                            >Idade do contato
+                            <input
+                                type="number"
+                                min="0"
+                                name="age"
+                                id="age"
+                                placeholder="idade:"
+                            />
+                        </label>
+                        <label for="tel"
+                            >Telefone do contato:
+                            <input
+                                type="tel"
+                                name="tel"
+                                id="tel"
+                                placeholder="telefone:"
+                            />
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="button-container">
+                        <button type="submit" class="submit-button">
+                            Enviar
+                        </button>
+                        <button class="cancel-button">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
     </body>
 </html>

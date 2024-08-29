@@ -1,12 +1,3 @@
-:root {
-  --text-color: hsl(0, 0%, 15%);
-  --secondary-text-color: hsl(211, 57%, 14%);
-  --border-color: hsl(0, 0%, 30%);
-  --primary-background: hsl(0, 0%, 85%);
-  --contact-background: hsl(0, 0%, 75%);
-  --body-background: hsl(0, 0%, 93%);
-}
-
 body {
   background-color: var(--body-backgroundd);
   height: 100vh;
@@ -14,9 +5,6 @@ body {
   font-size: 14px;
   transition: 0.3;
   color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 header {
@@ -46,46 +34,101 @@ header input {
   padding: 0.4rem;
 }
 
+main {  
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main section {
+  width: 50%;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.back-menu {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 form {
-  width: 70%;
+  width: 100%;
   background-color: var(--primary-background);
+  border: 1px dashed var(--border-color);
   padding: 2rem;
   border-radius: 10px;
   display: grid;
   gap: 1.5rem;
 }
 
+form:hover h1{
+  margin-bottom: 5%;
+}
+
 form h1 {
   margin-bottom: 3%;
   color: var(--secondary-text-color);
+  transition: 0.2s;
 }
 
 .input-container {
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-input {
+label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-container input {
+  min-width: 70%;
   outline: none;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 0.4rem;
 }
 
-main {
-  margin-top: 5%;
+hr {
+  height: 1px;
+  border: 0;
+  background-color: hsl(0, 0%, 70%);
+}
+
+.button-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 button {
   cursor: pointer;
-  padding: 0.7rem;
+  padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 5px;
-  font-size: 0.8em;
+  font-size: 1em;
   transition: 0.2s;
+}
+
+button:hover {
+  border-radius: 8px;
+}
+
+.submit-button {
+  background-color: hsl(150, 50%, 68%);
+}
+
+.cancel-button{
+  background-color: hsl(0, 55%, 70%);
+}
+
+.submit-button:hover {
+  background-color: hsl(150, 50%, 60%);
+}
+
+.cancel-button:hover{
+  background-color: hsl(0, 51%, 61%);
 }
