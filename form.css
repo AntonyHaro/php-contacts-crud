@@ -1,0 +1,91 @@
+:root {
+  --text-color: hsl(0, 0%, 15%);
+  --secondary-text-color: hsl(211, 57%, 14%);
+  --border-color: hsl(0, 0%, 30%);
+  --primary-background: hsl(0, 0%, 85%);
+  --contact-background: hsl(0, 0%, 75%);
+  --body-background: hsl(0, 0%, 93%);
+}
+
+body {
+  background-color: var(--body-backgroundd);
+  height: 100vh;
+  width: 100vw;
+  font-size: 14px;
+  transition: 0.3;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--primary-background);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px dashed var(--text-color);
+}
+
+header h1 {
+  font-size: 1.4em;
+}
+
+header nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+header input {
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+form {
+  width: 70%;
+  background-color: var(--primary-background);
+  padding: 2rem;
+  border-radius: 10px;
+  display: grid;
+  gap: 1.5rem;
+}
+
+form h1 {
+  margin-bottom: 3%;
+  color: var(--secondary-text-color);
+}
+
+.input-container {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input {
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+main {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 0.8em;
+  transition: 0.2s;
+}
