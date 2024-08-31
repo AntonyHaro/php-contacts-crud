@@ -1,0 +1,99 @@
+body {
+  height: 100vh;
+  font-size: 14px;
+}
+
+main {
+  padding: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+h1 {
+  margin-bottom: 1.5%;
+}
+
+.user-container {
+  width: 55vw;
+  padding: 1.7rem;
+  border-radius: 4px;
+  background-color: rgb(221, 221, 221);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.user {
+  width: 100%;
+  background-color: rgb(197, 197, 197);
+  border-left: 2px solid rgb(145, 145, 145);
+  border-radius: 0 4px 4px 0;
+  padding: 0.8rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.user:hover {
+  border-color: rgb(255, 118, 118);
+  margin-left: 0.4%;
+}
+
+p {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.info-wrapper {
+  display: flex;
+  gap: 1.7rem;
+}
+
+.options {
+  display: flex;
+  gap: 0.4rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(55, 55, 55);
+  padding: 0.5rem;
+  border: 1px solid rgb(55, 55, 55);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+a:hover {
+  border-radius: 7px;
+}
+
+.create-user {
+  background-color: lightgreen;
+}
+
+.create-user:hover {
+  background-color: rgb(121, 216, 121);
+}
+
+.del-user {
+  background-color: rgb(233, 128, 128);
+}
+
+.del-user:hover {
+  background-color: rgb(255, 111, 111);
+}
+
+.edit-user {
+  background-color: rgb(141, 168, 194);
+}
+
+.edit-user:hover {
+  background-color: rgb(118, 153, 185);
+}
+
+.no-results {
+  color: gray;
+}

@@ -2,49 +2,54 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Início</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
-    <a href="create/create.html">Criar um novo usuário</a>
-    <a href="delete/delete.html">Excluir um usuário</a>
-    <a href="update/update.html">Editar um usuário</a>
+    <main>
+        <h1>Usuários:</h1>
+        <section class="user-container">
+            <?php
+            require_once "database.php";
+            try {
+                $sql = "SELECT * FROM users";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
 
-    <?php
-    require_once "database.php";
+                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    try {
-        $sql = "SELECT * FROM users";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+                if (count($users) > 0) {
+                    foreach ($users as $user) {
+                        echo "<div class='user'>";
 
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        echo "<div class='info-wrapper'>";
+                        echo "<p>" . htmlspecialchars($user['username']) . "</p>";
+                        echo "<p>" . "ID: " . htmlspecialchars($user['id']) . "</p>";
+                        echo "</div>";
 
-        if (count($users) > 0) {
-            echo "<table border='1'>";
-            echo "<tr><th>ID</th><th>Username</th><th>Email</th><th>Password</th></tr>";
-            foreach ($users as $user) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($user['id']) . "</td>";
-                echo "<td>" . htmlspecialchars($user['username']) . "</td>";
-                echo "<td>" . htmlspecialchars($user['email']) . "</td>";
-                echo "<td>" . htmlspecialchars($user["password"]) . "</td>";
-                echo "</tr>";
+                        echo "<p>" . htmlspecialchars($user['email']) . "</p>";
+
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p class='no-results'>- Nenhum registro encontrado. Experimente criar um!</p>";
+                }
+            } catch (PDOException $e) {
+                echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
             }
-            echo "</table>";
-        } else {
-            ;
-            echo "Nenhum registro encontrado.";
-        }
-
-    } catch (PDOException $e) {
-        echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
-    }
-
-    $conn = null;
-    ?>
+            $conn = null;
+            ?>
+        </section>
+        <section class="options">
+            <a href="create/create.html" class="create-user">Criar um novo usuário</a>
+            <a href="delete/delete.html" class="del-user">Excluir um usuário</a>
+            <a href="update/update.html" class="edit-user">Editar um usuário</a>
+        </section>
+    </main>
 </body>
 
 </html>
