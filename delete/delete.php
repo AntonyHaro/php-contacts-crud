@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $sql = "DELETE FROM users WHERE id = :id";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT); // Definir o tipo como inteiro
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
         if ($stmt->execute()) {
-            echo "Usuário deletado com sucesso!";
-            echo "<a href='../index.php'>Voltar a página inicial</a>";
+            header("location: ../index.php");
+            exit();
         } else {
             echo "Erro ao excluir usuário";
         }

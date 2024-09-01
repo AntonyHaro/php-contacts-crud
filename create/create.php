@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Todos os campos são obrigatórios!";
         exit;
     }
+
     $hashed_password = md5($password);
 
     require_once "../database.php";
@@ -21,13 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':password', $hashed_password);
 
         if ($stmt->execute()) {
-            echo "Usuário cadastrado com sucesso!";
-            echo "<a href='../index.php'>Voltar a página inicial</a>";
+            header("location: ../index.php");
+            exit();
         } else {
             echo "Erro ao cadastrar o usuário.";
         }
     } catch (PDOException $e) {
-        echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+        echo "Erro ao conectar ao banco de dados: " . htmlspecialchars($e->getMessage());
     }
+
     $conn = null;
 }

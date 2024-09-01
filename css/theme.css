@@ -1,0 +1,8 @@
+:root {
+  --text-color: hsl(0, 0%, 18%);
+  --secondary-text-color: hsl(0, 0%, 35%);
+  --highlight-color: hsl(0, 100%, 62%);
+  --body-background: hsl(0, 0%, 90%);
+  --primary-background: hsl(0, 0%, 84%);
+  --border-radius: 3px;
+}

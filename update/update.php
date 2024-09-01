@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
         if ($stmt->execute()) {
-            echo "Usuário atualizado com sucesso!";
-            echo "<a href='../index.php'>Voltar a página inicial</a>";
+            header("location: ../index.php");
+            exit();
         } else {
             echo "Erro ao atualizar usuário.";
         }

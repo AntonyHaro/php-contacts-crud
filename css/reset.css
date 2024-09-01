@@ -4,3 +4,45 @@
   box-sizing: border-box;
   font-family: monospace;
 }
+
+body {
+  height: 100vh;
+  font-size: 14px;
+  background-color: var(--body-background);
+  color: var(--text-color);
+}
+
+main {
+  padding: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+h1 {
+  margin-bottom: 1.5%;
+}
+
+button,
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+  padding: 0.5rem;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: var(--border-radius);
+  transition: 0.2s;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+  border-radius: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: gray;
+}

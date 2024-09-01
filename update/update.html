@@ -2,22 +2,50 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Excluir um Usuário</title>
+        <title>Editar um Usuário</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/theme.css" />
+        <link rel="stylesheet" href="../css/form.css" />
     </head>
     <body>
-        <h1>Editar um Usuário</h1>
-        <form action="update.php" method="post">
-            <label for="username">ID do Usuário:</label>
-            <input type="number" min="0" name="id" id="id" required />
+        <main>
+            <h1>Editar um Usuário</h1>
+            <form action="update.php" method="post">
+                <div class="input-container">
+                    <label for="username"
+                        >ID do Usuário:
+                        <input
+                            type="number"
+                            min="0"
+                            name="id"
+                            id="id"
+                            placeholder="id:"
+                    /></label>
 
-            <label for="username">Novo nome do usuário</label>
-            <input type="text" name="username" id="username" />
+                    <label for="username"
+                        >Novo nome do usuário:
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="novo nome:"
+                    /></label>
 
-            <label for="email">Novo email do usuário</label>
-            <input type="email" name="email" id="email" />
-
-            <a href="../index.php">Voltar a página inicial</a>
-            <input type="submit" value="Confirmar" />
-        </form>
+                    <label for="email"
+                        >Novo email do usuário:
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="novo email:"
+                    /></label>
+                </div>
+                <hr />
+                <div class="button-container">
+                    <button type="submit">Confirmar</button>
+                    <a href="../index.php">Voltar a página inicial</a>
+                </div>
+            </form>
+        </main>
     </body>
 </html>
