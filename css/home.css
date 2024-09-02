@@ -1,3 +1,7 @@
+:root {
+  --edit-user-color: hsl(240, 56%, 31%);
+}
+
 .user-container {
   width: 55vw;
   padding: 1.7rem;
@@ -9,8 +13,8 @@
 
 .user {
   width: 100%;
-  border: 1px solid var(--text-color);
-  border-left: 3px solid var(--text-color);
+  border: 1px solid var(--secondary-text-color);
+  border-left: 4px solid var(--secondary-text-color);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   padding: 0.8rem;
   display: flex;
@@ -42,6 +46,38 @@ p {
   gap: 0.4rem;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+  padding: 0.5rem;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: var(--border-radius);
+  transition: 0.2s;
+}
+
+a:hover {
+  cursor: pointer;
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+  border-radius: 0;
+}
+
 .no-results {
   color: gray;
+}
+
+.create-user:hover {
+  border-color: var(--confirm-color);
+  color: var(--confirm-color);
+}
+
+.del-user:hover {
+  border-color: var(--cancel-color);
+  color: var(--cancel-color);
+}
+
+.edit-user:hover {
+  border-color: var(--edit-user-color);
+  color: var(--edit-user-color);
 }

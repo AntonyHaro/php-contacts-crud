@@ -4,12 +4,12 @@ form {
   padding: 1.7rem;
   border-radius: var(--border-radius);
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .input-container {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 label {
@@ -24,4 +24,15 @@ input {
   border: 1px solid var(--text-color);
   border-radius: var(--border-radius);
   outline: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
 }
