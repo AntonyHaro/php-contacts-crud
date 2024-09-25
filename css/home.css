@@ -1,83 +1,87 @@
 :root {
-  --edit-user-color: hsl(240, 56%, 31%);
+    --edit-user-color: hsl(240, 56%, 31%);
 }
 
 .user-container {
-  width: 55vw;
-  padding: 1.7rem;
-  border-radius: var(--border-radius);
-  border: 1px dashed var(--text-color);
-  display: grid;
-  gap: 0.4rem;
+    width: 75vw;
+    padding: 1.7rem;
+    border-radius: var(--border-radius);
+    background-color: lightgray;
+    box-shadow: -1px 1px 1px hsl(0, 0%, 60%);
+    display: grid;
+    gap: 0.4rem;
 }
 
 .user {
-  width: 100%;
-  border: 1px solid var(--secondary-text-color);
-  border-left: 4px solid var(--secondary-text-color);
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  padding: 0.8rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.2s;
+    width: 100%;
+    background-color: hsl(0, 0%, 89%);
+    box-shadow: -1px 1px 1px hsl(0, 0%, 60%);
+    border-radius: 5px;
+    padding: 0.8rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
 }
 
 .user:hover {
-  border-color: var(--highlight-color);
-  margin-left: 0.4%;
+    box-shadow: -1px 1px 1px gray;
+    margin-left: 0.4%;
 }
 
 p {
-  word-wrap: break-word;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .info-wrapper {
-  display: flex;
-  gap: 1.7rem;
+    display: flex;
+    gap: 1.7rem;
 }
 
 .options {
-  display: flex;
-  gap: 0.4rem;
+    display: flex;
+    gap: 0.4rem;
 }
 
 a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--secondary-text-color);
-  padding: 0.5rem;
-  border: 1px solid var(--secondary-text-color);
-  border-radius: var(--border-radius);
-  transition: 0.2s;
+    background-color: hsl(0, 0%, 87%);
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.7rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    border: 2px solid lightgray;
+    border-left: 0.5rem solid lightgray;
+    transition: 0.2s;
 }
 
 a:hover {
-  cursor: pointer;
-  border-color: var(--highlight-color);
-  color: var(--highlight-color);
-  border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
+    transform: translateY(-0.2rem);
 }
 
 .no-results {
-  color: gray;
+    color: gray;
 }
 
 .create-user:hover {
-  border-color: var(--confirm-color);
-  color: var(--confirm-color);
+    border-color: var(--confirm-color);
+    color: var(--confirm-color);
 }
 
 .del-user:hover {
-  border-color: var(--cancel-color);
-  color: var(--cancel-color);
+    border-color: var(--cancel-color);
+    color: var(--cancel-color);
 }
 
 .edit-user:hover {
-  border-color: var(--edit-user-color);
-  color: var(--edit-user-color);
+    border-color: var(--edit-user-color);
+    color: var(--edit-user-color);
 }

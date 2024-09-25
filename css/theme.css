@@ -1,10 +1,11 @@
 :root {
-  --body-background: hsl(0, 0%, 90%);
-  --primary-background: hsl(0, 0%, 84%);
-  --text-color: hsl(0, 0%, 18%);
-  --secondary-text-color: hsl(0, 0%, 35%);
-  --highlight-color: hsl(0, 100%, 59%);
-  --confirm-color: hsl(120, 100%, 38%);
-  --cancel-color: red;
-  --border-radius: 3px;
+    --body-background: hsl(0, 0%, 90%);
+    --primary-background: hsl(0, 0%, 84%);
+    --box-shadow: hsl(0, 0%, 60%);
+    --text-color: hsl(0, 0%, 18%);
+    --secondary-text-color: hsl(0, 0%, 35%);
+    --highlight-color: hsl(0, 100%, 59%);
+    --confirm-color: hsl(120, 100%, 38%);
+    --cancel-color: red;
+    --border-radius: 3px;
 }

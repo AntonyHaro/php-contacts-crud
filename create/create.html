@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Cadastrar Novo Usuário</title>
-        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/global.css" />
         <link rel="stylesheet" href="../css/theme.css" />
         <link rel="stylesheet" href="../css/form.css" />
     </head>
@@ -12,37 +12,39 @@
             <h1>Cadastrar Novo Usuário</h1>
             <form action="create.php" method="post">
                 <div class="input-container">
-                    <label for="username"
-                        >Nome de Usuário:
+                    <p class="label-container">
+                        <label for="username">Nome de Usuário:</label>
                         <input
                             type="text"
                             name="username"
                             id="username"
                             placeholder="nome:"
                             required
-                    /></label>
+                        />
+                    </p>
 
-                    <label for="email"
-                        >Email:
+                    <p class="label-container">
+                        <label for="email">Email:</label>
                         <input
                             type="email"
                             name="email"
                             id="email"
                             placeholder="email:"
                             required
-                    /></label>
+                        />
+                    </p>
 
-                    <label for="password"
-                        >Senha:
+                    <p class="label-container">
+                        <label for="password">Senha:</label>
                         <input
                             type="password"
                             name="password"
                             id="password"
                             placeholder="senha:"
                             required
-                    /></label>
+                        />
+                    </p>
                 </div>
-                <hr />
                 <div class="button-container">
                     <button type="submit" class="confirm">Criar</button>
                     <a href="../index.php">Voltar a página inicial</a>
