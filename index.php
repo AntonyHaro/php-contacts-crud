@@ -14,26 +14,32 @@
     <main>
         <h1>Sistema de gerenciamento de usuários</h1>
         <p>Usuários cadastrados:</p>
+
         <section class="user-container">
             <?php
-            require_once "database.php";
+            require_once "database.php"; // Conexão com o banco de dados
+
             try {
                 $sql = "SELECT * FROM users";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
-
                 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 if (count($users) > 0) {
                     foreach ($users as $user) {
                         echo "<div class='user'>";
 
-                        echo "<div class='info-wrapper'>";
-                        echo "<p>" . htmlspecialchars($user['username']) . "</p>";
-                        echo "<p>" . "ID: " . htmlspecialchars($user['id']) . "</p>";
+                        // Exibindo informações do usuário
+                        echo "<div class='info'>";
+                        echo "<p class='name'>" . htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') . "</p>";
+                        echo "<p>" . htmlspecialchars($user['email'], ENT_QUOTES, 'UTF-8') . "</p>";
                         echo "</div>";
 
-                        echo "<p>" . htmlspecialchars($user['email']) . "</p>";
+                        // Adicionando links dinâmicos para Alterar e Excluir
+                        echo "<div class='options'>";
+                        echo "<a href='update.php?id=" . urlencode($user['id']) . "' class='option'>Alterar</a>";
+                        echo "<a href='delete.php?id=" . urlencode($user['id']) . "' class='option'>Excluir</a>";
+                        echo "</div>";
 
                         echo "</div>";
                     }
@@ -41,15 +47,16 @@
                     echo "<p class='no-results'>- Nenhum registro encontrado. Experimente criar um!</p>";
                 }
             } catch (PDOException $e) {
-                echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+                echo "<p class='error'>Erro ao conectar ao banco de dados: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "</p>";
             }
+
+            // Fechando a conexão com o banco de dados
             $conn = null;
             ?>
         </section>
+
         <section class="options">
-            <a href="create/create.html">Criar um novo usuário</a>
-            <a href="delete/delete.html">Excluir um usuário</a>
-            <a href="update/update.html">Editar um usuário</a>
+            <a href="create.php" class="create-user">Criar um novo usuário</a>
         </section>
     </main>
 </body>

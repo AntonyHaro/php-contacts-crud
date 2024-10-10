@@ -1,33 +1,64 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["id"];
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    if (empty($id)) {
-        echo "O ID é obrigatório!";
-        exit;
-    }
+<head>
+    <meta charset="UTF-8" />
+    <title>Excluir um Usuário</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+</head>
 
-    if (!is_numeric($id)) {
-        echo "ID inválido!";
-        exit;
-    }
+<body>
+    <main>
+        <h1>Excluir um Usuário</h1>
 
-    require_once "../database.php";
+        <section class="user-container">
+            <?php
+            require_once "database.php";
+            try {
+                $sql = "SELECT * FROM users";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
 
-    try {
-        $sql = "DELETE FROM users WHERE id = :id";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($stmt->execute()) {
-            header("location: ../index.php");
-            exit();
-        } else {
-            echo "Erro ao excluir usuário";
-        }
-    } catch (PDOException $e) {
-        echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
-    }
+                if (count($users) > 0) {
+                    foreach ($users as $user) {
+                        echo "<div class='user'>";
 
-    $conn = null;
-}
+                        echo "<div class='info-wrapper'>";
+                        echo "<p>" . htmlspecialchars($user['username']) . "</p>";
+                        echo "<p>" . "ID: " . htmlspecialchars($user['id']) . "</p>";
+                        echo "</div>";
+
+                        echo "<p>" . htmlspecialchars($user['email']) . "</p>";
+
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p class='no-results'>- Nenhum registro encontrado. Experimente criar um!</p>";
+                }
+            } catch (PDOException $e) {
+                echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+            }
+            $conn = null;
+            ?>
+        </section>
+
+        <form action="delete.php" method="post">
+            <div class="input-container">
+                <p class="label-container">
+                    <label for="username">ID do Usuário: </label><input type="number" min="0" name="id" id="id"
+                        placeholder="id:" required />
+                </p>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="cancel">Excluir</button>
+                <a href="../index.php">Voltar a página inicial</a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

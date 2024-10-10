@@ -25,6 +25,13 @@ h1 {
     margin-bottom: 1.5%;
 }
 
+p {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 button {
     text-decoration: none;
     font-weight: bold;
