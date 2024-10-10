@@ -12,7 +12,8 @@
 
 <body>
     <main>
-        <h1>Usuários:</h1>
+        <h1>Sistema de gerenciamento de usuários</h1>
+        <p>Usuários cadastrados:</p>
         <section class="user-container">
             <?php
             require_once "database.php";
@@ -46,9 +47,9 @@
             ?>
         </section>
         <section class="options">
-            <a href="create/create.html" class="create-user">Criar um novo usuário</a>
-            <a href="delete/delete.html" class="del-user">Excluir um usuário</a>
-            <a href="update/update.html" class="edit-user">Editar um usuário</a>
+            <a href="create/create.html">Criar um novo usuário</a>
+            <a href="delete/delete.html">Excluir um usuário</a>
+            <a href="update/update.html">Editar um usuário</a>
         </section>
     </main>
 </body>
