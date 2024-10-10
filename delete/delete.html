@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Excluir um Usuário</title>
-        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/global.css" />
         <link rel="stylesheet" href="../css/theme.css" />
         <link rel="stylesheet" href="../css/form.css" />
     </head>
@@ -12,18 +12,18 @@
             <h1>Excluir um Usuário</h1>
             <form action="delete.php" method="post">
                 <div class="input-container">
-                    <label for="username"
-                        >ID do Usuário:
-                        <input
+                    <p class="label-container">
+                        <label for="username">ID do Usuário: </label
+                        ><input
                             type="number"
                             min="0"
                             name="id"
                             id="id"
                             placeholder="id:"
                             required
-                    /></label>
+                        />
+                    </p>
                 </div>
-                <hr />
                 <div class="button-container">
                     <button type="submit" class="cancel">Excluir</button>
                     <a href="../index.php">Voltar a página inicial</a>
