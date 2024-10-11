@@ -3,6 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $username = $_POST["username"];
     $email = $_POST["email"];
+    $age = $_POST["age"];
 
     if (empty($id) || empty($username) || empty($email)) {
         echo "Todos os campos são obrigatórios!";

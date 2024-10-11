@@ -2,24 +2,22 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $age = $_POST['age'];
 
-    if (empty($username) || empty($email) || empty($password)) {
+    if (empty($username) || empty($email) || empty($age)) {
         echo "Todos os campos são obrigatórios!";
         exit;
     }
 
-    $hashed_password = md5($password);
-
     require_once "../database.php";
 
     try {
-        $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+        $sql = "INSERT INTO users (username, email, age) VALUES (:username, :email, :age)";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashed_password);
+        $stmt->bindParam(':age', $age);
 
         if ($stmt->execute()) {
             header("location: ../index.php");

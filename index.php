@@ -14,11 +14,12 @@
     <main>
         <h1>Sistema de gerenciamento de usuários</h1>
         <p>Usuários cadastrados:</p>
+        <a href="create/create.html" class="create-user">Criar um novo usuário</a>
 
         <section class="user-container">
             <?php
             require_once "database.php"; // Conexão com o banco de dados
-
+            
             try {
                 $sql = "SELECT * FROM users";
                 $stmt = $conn->prepare($sql);
@@ -37,8 +38,9 @@
 
                         // Adicionando links dinâmicos para Alterar e Excluir
                         echo "<div class='options'>";
-                        echo "<a href='update.php?id=" . urlencode($user['id']) . "' class='option'>Alterar</a>";
-                        echo "<a href='delete.php?id=" . urlencode($user['id']) . "' class='option'>Excluir</a>";
+                        echo "<a href='update/updateForm.php?&id=" . urlencode($user['id']) . "&username=" . urlencode($user['username']) . "&email=" . urlencode($user['email']) . "&age=" . urlencode($user['age']) . "' class='option'>Alterar</a>";
+
+                        echo "<a href='delete/deleteForm.php?id=" . urlencode($user['id']) . "' class='option'>Excluir</a>";
                         echo "</div>";
 
                         echo "</div>";
@@ -53,10 +55,6 @@
             // Fechando a conexão com o banco de dados
             $conn = null;
             ?>
-        </section>
-
-        <section class="options">
-            <a href="create.php" class="create-user">Criar um novo usuário</a>
         </section>
     </main>
 </body>
