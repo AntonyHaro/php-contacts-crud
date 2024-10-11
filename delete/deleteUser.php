@@ -1,6 +1,6 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["id"];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $id = $_GET["id"];
 
     if (empty($id)) {
         echo "O ID é obrigatório!";

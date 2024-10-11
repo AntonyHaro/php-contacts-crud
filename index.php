@@ -39,8 +39,7 @@
                         // Adicionando links dinâmicos para Alterar e Excluir
                         echo "<div class='options'>";
                         echo "<a href='update/updateForm.php?&id=" . urlencode($user['id']) . "&username=" . urlencode($user['username']) . "&email=" . urlencode($user['email']) . "&age=" . urlencode($user['age']) . "' class='option'>Alterar</a>";
-
-                        echo "<a href='delete/deleteForm.php?id=" . urlencode($user['id']) . "' class='option'>Excluir</a>";
+                        echo "<a href='delete/deleteUser.php?id=" . urlencode($user['id']) . "' class='option'>Excluir</a>";
                         echo "</div>";
 
                         echo "</div>";
