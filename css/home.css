@@ -2,8 +2,56 @@
     --edit-user-color: hsl(240, 56%, 31%);
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: black;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+header img {
+    height: 40px;
+}
+
+header .operations {
+    display: flex;
+    gap: 0.5rem;
+}
+
+a {
+    width: fit-content;
+    background-color: rgb(164, 211, 164);
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 3px;
+    border: 1px solid rgb(131, 196, 131);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: 0.2s;
+}
+
+a img {
+    height: 20px;
+}
+
+a:hover {
+    transform: translateY(-2px);
+}
+
 .user-container {
-    width: 75vw;
+    width: 100%;
     padding: 1.7rem;
     border-radius: var(--border-radius);
     background-color: lightgray;
@@ -27,7 +75,7 @@
 .user .info {
     flex: 1;
     display: flex;
-    /* justify-content: space-between; */
+    align-items: center;
     gap: 2rem;
 }
 
@@ -52,7 +100,7 @@
 }
 
 .option {
-    background-color: hsl(0, 0%, 87%);
+    background-color: transparent;
     color: gray;
     text-decoration: none;
     font-weight: bold;
@@ -60,30 +108,19 @@
     border-radius: var(--border-radius);
     border: 2px solid lightgray;
     transition: 0.2s;
+    cursor: pointer;
 }
 
-.option:hover {
-    background-color: transparent;
-    cursor: pointer;
-    border-color: #5d738d;
-    color: #5d738d;
+.update {
+    border-color: #4475a3;
+    color: #4475a3;
+}
+
+.delete {
+    border-color: #ff7373;
+    color: #ff7373;
 }
 
 .no-results {
     color: gray;
-}
-
-.create-user:hover {
-    border-color: var(--confirm-color);
-    color: var(--confirm-color);
-}
-
-.del-user:hover {
-    border-color: var(--cancel-color);
-    color: var(--cancel-color);
-}
-
-.edit-user:hover {
-    border-color: var(--edit-user-color);
-    color: var(--edit-user-color);
 }
