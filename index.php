@@ -13,7 +13,7 @@
 <body>
     <main>
         <header>
-            <h1> <img src="assets/logo.svg" alt=""> Sistema de Gerenciamento de Usuários</h1>
+            <h1> <img src="assets/logo.svg" alt=""> Sistema de Gerenciamento de Contatos</h1>
             <div class="operations">
                 <a href="create/createForm.html" class="create-user"> <img src="assets/create.svg" alt=""> criar novo
                     usuário</a>
@@ -23,8 +23,12 @@
                     usuário</a>
             </div>
         </header>
-        
-        <p>Usuários cadastrados:</p>
+
+        <p>Listagem atual de todos os contatos cadastrados no sistema. Você pode fazer operações de
+            <strong>criar</strong>, <strong>excluir</strong>,
+            <strong>editar</strong> e <strong>apagar</strong> utilizando os botões acima ou os disponíveis do lado de
+            cada registro.
+        </p>
         <section class="user-container">
             <?php
             require_once "database.php"; // Conexão com o banco de dados
@@ -39,16 +43,14 @@
                     foreach ($users as $user) {
                         echo "<div class='user'>";
 
-                        // Exibindo informações do usuário
                         echo "<div class='info'>";
                         echo "<p class='name'>" . htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') . "</p>";
                         echo "<p> ID: " . htmlspecialchars($user['id'], ENT_QUOTES, 'UTF-8') . "</p>";
                         echo "<p>" . htmlspecialchars($user['email'], ENT_QUOTES, 'UTF-8') . "</p>";
                         echo "</div>";
 
-                        // Adicionando links dinâmicos para Alterar e Excluir
                         echo "<div class='options'>";
-                        echo "<a href='update/updateForm.php?&id=" . urlencode($user['id']) . "&username=" . urlencode($user['username']) . "&email=" . urlencode($user['email']) . "&age=" . urlencode($user['age']) . "' class='option update'>Alterar</a>";
+                        echo "<a href='update/updateForm.php?&id=" . urlencode($user['id']) . "&username=" . urlencode($user['username']) . "&email=" . urlencode($user['email']) . "&age=" . urlencode($user['age']) . "' class='option update'>Editar</a>";
                         echo "<a href='delete/deleteUser.php?id=" . urlencode($user['id']) . "' class='option delete'>Excluir</a>";
                         echo "</div>";
 

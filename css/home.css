@@ -27,7 +27,7 @@ header .operations {
     gap: 0.5rem;
 }
 
-a {
+header a {
     width: fit-content;
     background-color: rgb(164, 211, 164);
     font-weight: bold;
@@ -35,19 +35,20 @@ a {
     text-decoration: none;
     padding: 0.7rem;
     border-radius: 3px;
-    border: 1px solid rgb(131, 196, 131);
+    border: 1px solid transparent;
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    transition: 0.2s;
+    transition: 0.2s ease-out;
 }
 
-a img {
+header a img {
     height: 20px;
 }
 
-a:hover {
-    transform: translateY(-2px);
+header a:hover {
+    border-color: rgb(131, 196, 131);
+    transform: translateY(-0.2rem);
 }
 
 .user-container {
@@ -80,7 +81,6 @@ a:hover {
 }
 
 .user .info p {
-    /* flex: 1; */
     max-width: 50%;
 }
 
@@ -103,22 +103,23 @@ a:hover {
     background-color: transparent;
     color: gray;
     text-decoration: none;
-    font-weight: bold;
     padding: 0.4rem;
     border-radius: var(--border-radius);
-    border: 2px solid lightgray;
     transition: 0.2s;
     cursor: pointer;
+    color: white;
+}
+
+.option:hover {
+    transform: translateY(-2px);
 }
 
 .update {
-    border-color: #4475a3;
-    color: #4475a3;
+    background-color: hsl(209, 5%, 45%);
 }
 
 .delete {
-    border-color: #ff7373;
-    color: #ff7373;
+    background-color: hsl(0, 76%, 69%);
 }
 
 .no-results {

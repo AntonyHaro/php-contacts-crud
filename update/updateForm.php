@@ -49,13 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="label-container">
                     <label for="id">ID do Usuário:</label>
                     <input type="number" min="0" name="id" id="id" placeholder="id:"
-                        value="<?php echo htmlspecialchars($id, ENT_QUOTES, 'UTF-8'); ?>" readonly />
-                </p>
+                        value="<?php echo htmlspecialchars($id, ENT_QUOTES, 'UTF-8'); ?>" <?php if (!empty($id))
+                                 echo "readonly" ?> />
+                    </p>
 
-                <p class="label-container">
-                    <label for="username">Novo nome do usuário:</label>
-                    <input type="text" name="username" id="username" placeholder="novo nome:"
-                        value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>" />
+                    <p class="label-container">
+                        <label for="username">Novo nome do usuário:</label>
+                        <input type="text" name="username" id="username" placeholder="novo nome:"
+                            value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>" />
                 </p>
 
                 <p class="label-container">

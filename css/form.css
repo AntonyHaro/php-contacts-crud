@@ -1,49 +1,52 @@
+:root {
+    --focus-color: gray;
+}
+
 form {
     width: 70vw;
-    padding: 1.5rem;
-    border-radius: 5px;
-    background-color: hsl(0, 0%, 87%);
-    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
     display: grid;
     gap: 1.7rem;
 }
 
 .input-container {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .label-container {
     width: 100%;
+    background-color: var(--primary-background);
+    padding: 1.7rem;
+    border-radius: var(--border-radius);
     display: grid;
-    gap: 0.4rem;
+    gap: 1rem;
 }
 
 label {
     font-weight: bold;
-    color: hsl(0, 0%, 30%);
+    color: var(--secondary-text-color);
 }
 
 input {
     background-color: transparent;
     padding: 0.4rem;
     border: 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--secondary-text-color);
     outline: none;
     transition: 0.2s;
 }
 
 input::placeholder {
-    color: gray;
+    color: var(--secondary-text-color);
 }
 
 input:focus {
-    transform: translateY(-0.2rem);
-    border-color: hsl(212, 45%, 31%);
+    transform: translateY(-0.1rem);
+    border-color: var(--focus-color)
 }
 
 input:focus::placeholder {
-    color: hsl(212, 45%, 31%);
+    color: var(--focus-color)
 }
 
 .button-container {

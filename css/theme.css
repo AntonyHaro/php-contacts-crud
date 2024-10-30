@@ -1,7 +1,7 @@
 :root {
-    --body-background: hsl(0, 0%, 90%);
-    --primary-background: hsl(0, 0%, 84%);
-    --box-shadow: hsl(0, 0%, 60%);
+    --body-background: hsl(0, 0%, 100%);
+    --primary-background: hsl(212, 7%, 87%);
+    --box-shadow: hsla(0, 0%, 0%, 0.438);
     --text-color: hsl(212, 5%, 20%);
     --secondary-text-color: hsl(0, 0%, 35%);
     --highlight-color: hsl(0, 100%, 59%);
