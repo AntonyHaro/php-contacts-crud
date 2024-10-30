@@ -34,24 +34,24 @@
             require_once "database.php"; // Conexão com o banco de dados
             
             try {
-                $sql = "SELECT * FROM users";
+                $sql = "SELECT * FROM contacts";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
-                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                if (count($users) > 0) {
-                    foreach ($users as $user) {
+                if (count($contacts) > 0) {
+                    foreach ($contacts as $contact) {
                         echo "<div class='user'>";
 
                         echo "<div class='info'>";
-                        echo "<p class='name'>" . htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') . "</p>";
-                        echo "<p> ID: " . htmlspecialchars($user['id'], ENT_QUOTES, 'UTF-8') . "</p>";
-                        echo "<p>" . htmlspecialchars($user['email'], ENT_QUOTES, 'UTF-8') . "</p>";
+                        echo "<p class='name'>" . htmlspecialchars($contact['username'], ENT_QUOTES, 'UTF-8') . "</p>";
+                        echo "<p> ID: " . htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8') . "</p>";
+                        echo "<p>" . htmlspecialchars($contact['email'], ENT_QUOTES, 'UTF-8') . "</p>";
                         echo "</div>";
 
                         echo "<div class='options'>";
-                        echo "<a href='update/updateForm.php?&id=" . urlencode($user['id']) . "&username=" . urlencode($user['username']) . "&email=" . urlencode($user['email']) . "&age=" . urlencode($user['age']) . "' class='option update'>Editar</a>";
-                        echo "<a href='delete/deleteUser.php?id=" . urlencode($user['id']) . "' class='option delete'>Excluir</a>";
+                        echo "<a href='update/updateForm.php?&id=" . urlencode($contact['id']) . "&username=" . urlencode($contact['username']) . "&email=" . urlencode($contact['email']) . "&age=" . urlencode($contact['age']) . "' class='option update'>Editar</a>";
+                        echo "<a href='delete/deleteUser.php?id=" . urlencode($contact['id']) . "' class='option delete'>Excluir</a>";
                         echo "</div>";
 
                         echo "</div>";

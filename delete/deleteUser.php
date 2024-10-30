@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     require_once "../database.php";
 
     try {
-        $sql = "DELETE FROM users WHERE id = :id";
+        $sql = "DELETE FROM contacts WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 

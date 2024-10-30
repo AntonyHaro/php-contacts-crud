@@ -1,0 +1,113 @@
+:root {
+    --focus-color: gray;
+    --submit-button: hsl(212, 30%, 20%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+h1 {
+    color: black;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+h1 img {
+    height: 40px;
+}
+
+form {
+    width: 40vw;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: gray;
+    text-decoration: none;
+}
+
+h2 {
+    color: var(--submit-button);
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.1s;
+}
+
+a:hover {
+    transform: translateY(-0.1rem);
+}
+
+.input-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.label-container {
+    width: 100%;
+    border: 2px dashed hsl(212, 8%, 78%);
+    padding: 1.7rem;
+    border-radius: var(--border-radius);
+    display: grid;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--secondary-text-color);
+}
+
+input {
+    background-color: transparent;
+    padding: 0.4rem;
+    border: 0;
+    border-bottom: 1px solid var(--secondary-text-color);
+    outline: none;
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: var(--secondary-text-color);
+}
+
+input:focus {
+    transform: translateY(-0.1rem);
+    border-color: var(--focus-color);
+}
+
+input:focus::placeholder {
+    color: var(--focus-color);
+}
+
+button {
+    /* width: fit-content; */
+    padding: 0.5rem 3rem;
+    background-color: var(--submit-button);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-0.2rem);
+    background-color: transparent;
+    border-color: var(--submit-button);
+    color: var(--submit-button);
+}

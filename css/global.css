@@ -4,11 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", monospace;
+    font-family: "Montserrat", arial;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 3rem;
+    font-family: "Montserrat", arial;
     font-size: 14px;
     background-color: var(--body-background);
     color: var(--text-color);

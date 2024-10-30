@@ -1,6 +1,6 @@
 <?php
 $servername = 'localhost';
-$dbname = 'users';
+$dbname = 'contacts_management_db';
 $dbuser = 'root';
 $password = '';
 

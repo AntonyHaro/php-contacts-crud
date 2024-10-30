@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "../database.php";
 
     try {
-        $sql = "UPDATE users SET username = :username, email = :email WHERE id = :id";
+        $sql = "UPDATE contacts SET username = :username, email = :email WHERE id = :id";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(":username", $username);

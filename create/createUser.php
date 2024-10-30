@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once "../database.php";
 
     try {
-        $sql = "INSERT INTO users (username, email, age) VALUES (:username, :email, :age)";
+        $sql = "INSERT INTO contacts (username, email, age) VALUES (:username, :email, :age)";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':username', $username);
