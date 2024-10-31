@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    
+
     require_once 'database.php'; // Inclua o arquivo de conexão
 
     try {
@@ -13,8 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':password', $password);
 
         if ($stmt->execute()) {
-            header("location: ./home.php");
-            exit();
+            echo "Conta criada com sucesso! <a href='index.html'>Faça login e comece a usar sua conta</a>";
+            // header("location: ./index.html");
+            // exit();
         } else {
             echo "Erro ao cadastrar o usuário.";
         }

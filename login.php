@@ -1,20 +1,31 @@
 <?php
-include 'db.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM usuarios WHERE username = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
+    include_once 'database.php';
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        echo "Login realizado com sucesso! <a href='painel.php'>Ir para o Painel</a>";
-    } else {
-        echo "Nome de usuário ou senha incorretos.";
+    try {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        $user = $stmt->fetch();
+
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            echo "Login realizado com sucesso! <a href='home.php'>Ir para a página inicial</a>";
+        } else {
+            echo "Nome de usuário ou senha incorretos.";
+        }
+    } catch (PDOException $e) {
+        echo "Erro ao realizar o login.";
     }
+
+    $conn = null;
+} else {
+    echo "Método de requisição inválido.";
 }

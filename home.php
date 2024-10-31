@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    echo "Você precisa estar logado para ver suas tarefas. <a href='index.html'>Fazer Login</a> ";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,6 +41,7 @@
         </p>
         <section class="user-container">
             <?php
+
             require_once "database.php"; // Conexão com o banco de dados
             
             try {
